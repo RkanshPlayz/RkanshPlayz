@@ -47,7 +47,7 @@
                 inset 0 0 15px rgba(188, 19, 254, 0.1);
             border: 2px solid var(--purple-glow);
             animation: purpleFlame 3s ease-in-out infinite alternate;
-            margin-bottom: 90px; /* Space so content doesn't get hidden behind bottom buttons */
+            margin-bottom: 90px;
             box-sizing: border-box;
         }
 
@@ -94,8 +94,9 @@
             height: auto;
             border-radius: 8px;
             border: 1px solid var(--purple-glow);
-            box-shadow: 0 0 10px rgba(188, 19, 254, 0.4);
+            box-shadow: 0 0 15px rgba(188, 19, 254, 0.5);
             margin: 15px 0;
+            display: block;
         }
 
         h3 {
@@ -135,7 +136,7 @@
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            flex-wrap: wrap; /* Allows buttons to drop to next line instead of going off-screen */
+            flex-wrap: wrap;
             justify-content: center;
             gap: 8px;
             background: rgba(13, 13, 20, 0.9);
@@ -182,7 +183,7 @@
     <div class="profile-box">
         <h1>🔮 WELCOME TO MY ZONE</h1>
         
-        <!-- Replaced with a fully stable working views badge -->
+        <!-- Live View Counter Badge -->
         <div class="counter-container">
             <img src="https://komarev.com/ghpvc/?username=rkanshplayz-portfolio&color=blueviolet&style=flat-square&label=VIEWS" alt="Profile Views"/>
         </div>
@@ -192,8 +193,8 @@
         <h3>ABOUT ME</h3>
         <p>I am a coder, digital content creator, and competitive gamer. I love blending logic with creativity—whether I am writing custom frontend code, producing high-energy music beats, or mastering complex game mechanics.</p>
         
-        <!-- High Quality Neon Purple Gaming Setup Image -->
-        <img class="profile-image" src="https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&w=600&q=80" alt="Gaming Zone">
+        <!-- Direct High-Quality Purple Gaming Setup Image Link -->
+        <img class="profile-image" src="https://i.ibb.co/v4vK0Xg/purple-gaming.jpg" alt="Gaming Zone">
 
         <hr>
         
@@ -210,7 +211,7 @@
         <p>Constantly leveling up my coding skills, creating awesome content, and building custom digital projects.</p>
     </div>
 
-    <!-- Re-engineered Bottom Dock (Will never overflow screen widths) -->
+    <!-- Social Dock -->
     <nav class="social-dock">
         <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="nav-btn">
             <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube
