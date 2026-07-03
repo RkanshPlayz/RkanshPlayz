@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rkansh Playz | Profile</title>
+    <!-- Importing a sleek, futuristic gaming font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Deep Black and Electric Purple Theme */
+        :root {
+            --bg-color: #050508;
+            --box-bg: #0d0d14;
+            --purple-glow: #bc13fe;
+            --purple-fire: #7a04eb;
+            --text-main: #ffffff;
+            --text-glow: #e0aaff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* The Main Info Box with Animated Purple Fire Border */
+        .profile-box {
+            background-color: var(--box-bg);
+            width: 90%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 
+                0 0 20px rgba(122, 4, 235, 0.2),
+                inset 0 0 15px rgba(188, 19, 254, 0.1);
+            
+            /* The 'Purple Fire' Border Effect */
+            border: 2px solid var(--purple-glow);
+            animation: purpleFlame 3s ease-in-out infinite alternate;
+        }
+
+        /* Animated Flame/Glow Effect */
+        @keyframes purpleFlame {
+            0% {
+                box-shadow: 0 0 15px #7a04eb, inset 0 0 10px #7a04eb;
+                border-color: #bc13fe;
+            }
+            50% {
+                box-shadow: 0 0 25px #bd00ff, 0 -5px 20px #7a04eb, inset 0 0 15px #bd00ff;
+                border-color: #e0aaff;
+            }
+            100% {
+                box-shadow: 0 0 15px #9d4edd, 0 2px 15px #bd00ff, inset 0 0 10px #9d4edd;
+                border-color: #bc13fe;
+            }
+        }
+
+        /* Typography Styles */
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--text-main);
+            text-shadow: 0 0 10px var(--purple-glow);
+            margin-top: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--text-glow);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        p, ul {
+            margin-bottom: 25px;
+            line-height: 1.6;
+            color: #dcdde1;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--purple-glow), transparent);
+            margin: 25px 0;
+        }
+
+        /* Bottom Right Navigation Dock */
+        .social-dock {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            gap: 12px;
+            background: rgba(13, 13, 20, 0.8);
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(188, 19, 254, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        /* Floating Buttons */
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-main);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: #14141f;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Individual Hover Glows */
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            color: #ffffff;
+            box-shadow: 0 0 15px var(--purple-glow);
+            border-color: var(--purple-glow);
+        }
+
+        /* Responsive tweak for mobile screens */
+        @media (max-width: 600px) {
+            .social-dock {
+                bottom: 15px;
+                right: 50%;
+                transform: translateX(50%);
+                width: max-content;
+            }
+            .profile-box {
+                padding: 20px;
+                margin-bottom: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The Main Styled Container -->
+    <div class="profile-box">
+        <h1>🔮 WELCOME TO MY ZONE</h1>
+        <hr>
+        
+        <h3>ABOUT ME</h3>
+        <p>I am a coder, digital content creator, and competitive gamer. I love blending logic with creativity—whether I am writing custom frontend code, producing high-energy music beats, or mastering complex game mechanics.</p>
+        
+        <hr>
+        
+        <h3>🚀 MY SKILLS & PLATFORMS</h3>
+        <ul>
+            <li><strong>Development:</strong> Writing custom HTML, CSS, and interactive JavaScript web tools from scratch.</li>
+            <li><strong>Content Creation:</strong> Producing, editing, and managing videos for my YouTube channel, <strong>Rkansh Playz</strong>.</li>
+            <li><strong>Gaming:</strong> Advanced Minecraft survival building, SMP competitive strategy, and high-tier Roblox gameplay and trading.</li>
+        </ul>
+        
+        <hr>
+        
+        <h3>⚡ CURRENT OBJECTIVE</h3>
+        <p>Constantly leveling up my coding skills, creating awesome content, and building custom digital projects.</p>
+    </div>
+
+    <!-- Bottom-Right Corner Floating Social Navigation -->
+    <nav class="social-dock">
+        <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="nav-btn">YouTube</a>
+        <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="nav-btn">Instagram</a>
+        <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="nav-btn">Roblox</a>
+    </nav>
+
+</body>
+</html>
