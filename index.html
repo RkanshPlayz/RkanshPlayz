@@ -6,6 +6,8 @@
     <title>Rkansh Playz | Profile</title>
     <!-- Importing a sleek, futuristic gaming font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Importing Font Awesome for clean, official app logos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* Deep Black and Electric Purple Theme */
@@ -71,9 +73,21 @@
             color: var(--text-main);
             text-shadow: 0 0 10px var(--purple-glow);
             margin-top: 0;
+            margin-bottom: 5px;
             font-size: 2.2rem;
             letter-spacing: 2px;
             text-align: center;
+        }
+
+        /* Counter Styling Center */
+        .counter-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .counter-container img {
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--purple-fire);
         }
 
         h3 {
@@ -133,6 +147,9 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px; /* Space between logo and text */
         }
 
         /* Individual Hover Glows */
@@ -163,6 +180,12 @@
     <!-- The Main Styled Container -->
     <div class="profile-box">
         <h1>🔮 WELCOME TO MY ZONE</h1>
+        
+        <!-- Live View Counter Badge -->
+        <div class="counter-container">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Frkanshplayz.github.io&count_bg=%237A04EB&title_bg=%230D0D14&title=VIEWS&edge_flat=false" alt="Views"/>
+        </div>
+
         <hr>
         
         <h3>ABOUT ME</h3>
@@ -183,11 +206,17 @@
         <p>Constantly leveling up my coding skills, creating awesome content, and building custom digital projects.</p>
     </div>
 
-    <!-- Bottom-Right Corner Floating Social Navigation -->
+    <!-- Bottom-Right Corner Floating Social Navigation with Icons -->
     <nav class="social-dock">
-        <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="nav-btn">YouTube</a>
-        <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="nav-btn">Instagram</a>
-        <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="nav-btn">Roblox</a>
+        <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="nav-btn">
+            <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube
+        </a>
+        <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="nav-btn">
+            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Instagram
+        </a>
+        <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="nav-btn">
+            <i class="fa-solid fa-cube" style="color: #a4b0be;"></i> Roblox
+        </a>
     </nav>
 
 </body>
