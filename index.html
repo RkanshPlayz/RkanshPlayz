@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rkansh Playz | Profile</title>
-    <!-- Futuristic gaming fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -51,6 +49,13 @@
             cursor: pointer;
             box-shadow: 0 0 20px var(--purple-fire);
             transition: all 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            transform: scale(1.05);
+            background: var(--purple-fire);
+            box-shadow: 0 0 35px var(--purple-glow);
+            text-shadow: 0 0 10px #ffffff;
         }
 
         body {
@@ -232,6 +237,15 @@
             color: #dcdde1;
         }
 
+        .content-card ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .content-card li {
+            margin-bottom: 6px;
+        }
+
         .social-icons-row {
             display: flex;
             gap: 25px;
@@ -244,6 +258,12 @@
             font-size: 1.7rem;
             transition: all 0.2s ease;
             opacity: 0.8;
+        }
+
+        .icon-link:hover {
+            opacity: 1;
+            transform: scale(1.15);
+            text-shadow: 0 0 10px #ffffff;
         }
 
         .view-counter-text {
@@ -311,8 +331,7 @@
     </div>
 
     <div class="profile-container">
-        <!-- Self-contained fallback image link -->
-        <img id="main-pfp" src="1000008356.jpg" class="top-avatar" alt="RkanshPlayz PFP" onerror="useEmbeddedFallback(this)">
+        <img src="https://cdn.discordapp.com/attachments/1519398905815502939/1523009499118571812/03cb7992ef8badf6bcaf2b6211726dd6.jpg?ex=6a4a8ca0&is=6a493b20&hm=ab685e552262d65157615dc0f4011e147949ed8247d62a0b55cc16368d0a5961&" class="top-avatar" alt="RkanshPlayz PFP">
 
         <h1 class="display-name">RkanshPlayz</h1>
         <p class="headline-bio">Website & Website Game Creator</p>
@@ -322,7 +341,7 @@
         </div>
 
         <div class="discord-box">
-            <img id="disc-pfp" src="1000008356.jpg" class="discord-avatar" alt="Discord Avatar" onerror="useEmbeddedFallback(this)">
+            <img src="https://cdn.discordapp.com/attachments/1519398905815502939/1523009499118571812/03cb7992ef8badf6bcaf2b6211726dd6.jpg?ex=6a4a8ca0&is=6a493b20&hm=ab685e552262d65157615dc0f4011e147949ed8247d62a0b55cc16368d0a5961&" class="discord-avatar" alt="Discord Avatar">
             <div class="discord-details">
                 <div class="discord-info-wrapper">
                     <span class="discord-username">rkanshplayz</span>
@@ -365,28 +384,23 @@
     </div>
 
     <script>
-        // Implements a hardcoded text fallback if the image path fails
-        function useEmbeddedFallback(img) {
-            // High-fidelity absolute SVG encoding as an un-dropable image element
-            img.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23141424' stroke='%23bc13fe' stroke-width='2'/><text x='50%' y='55%' font-family='Orbitron, sans-serif' font-size='32' fill='%23ffffff' text-anchor='middle'>🥷</text></svg>";
-        }
-
         function initiateZone() {
             const gate = document.getElementById('entry-overlay');
             gate.style.opacity = '0';
             setTimeout(() => { gate.style.visibility = 'hidden'; }, 500);
 
+            // Mount and un-mute the tracking stream asset inside active interaction logic scope
             const player = document.getElementById('yt-player');
             player.src = "https://www.youtube.com/embed/XAP8ST5mRgg?autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0";
         }
 
         async function runViews() {
             try {
-                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v12');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v15');
                 const data = await res.json();
-                document.getElementById('custom-hits').innerText = data.count || data.value || 65;
+                document.getElementById('custom-hits').innerText = data.count || data.value || 72;
             } catch (e) {
-                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (75 - 65 + 1)) + 65;
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (85 - 72 + 1)) + 72;
             }
         }
         window.addEventListener('DOMContentLoaded', runViews);
@@ -394,4 +408,3 @@
 
 </body>
 </html>
-
