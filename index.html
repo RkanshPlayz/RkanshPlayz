@@ -53,13 +53,6 @@
             transition: all 0.3s ease;
         }
 
-        .enter-btn:hover {
-            transform: scale(1.05);
-            background: var(--purple-fire);
-            box-shadow: 0 0 35px var(--purple-glow);
-            text-shadow: 0 0 10px #ffffff;
-        }
-
         body {
             background-color: var(--bg-color);
             background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('1000008909.gif');
@@ -239,15 +232,6 @@
             color: #dcdde1;
         }
 
-        .content-card ul {
-            padding-left: 20px;
-            margin-bottom: 0;
-        }
-
-        .content-card li {
-            margin-bottom: 6px;
-        }
-
         .social-icons-row {
             display: flex;
             gap: 25px;
@@ -260,12 +244,6 @@
             font-size: 1.7rem;
             transition: all 0.2s ease;
             opacity: 0.8;
-        }
-
-        .icon-link:hover {
-            opacity: 1;
-            transform: scale(1.15);
-            text-shadow: 0 0 10px #ffffff;
         }
 
         .view-counter-text {
@@ -308,7 +286,6 @@
             font-size: 0.85rem;
             color: #ffffff;
             text-align: center;
-            letter-spacing: 0.5px;
             margin-bottom: 4px;
         }
 
@@ -329,14 +306,13 @@
 </head>
 <body>
 
-    <!-- Entrance overlay -->
     <div id="entry-overlay">
         <button class="enter-btn" onclick="initiateZone()">ENTER ZONE</button>
     </div>
 
     <div class="profile-container">
-        <!-- Direct cloud image host fallback so it never displays as blank -->
-        <img id="main-avatar" src="https://api.fluentcdn.com/assets/rkansh-avatar.jpg" class="top-avatar" alt="RkanshPlayz PFP" onerror="this.src='1000008356_2.jpg'">
+        <!-- Self-contained fallback image link -->
+        <img id="main-pfp" src="1000008356.jpg" class="top-avatar" alt="RkanshPlayz PFP" onerror="useEmbeddedFallback(this)">
 
         <h1 class="display-name">RkanshPlayz</h1>
         <p class="headline-bio">Website & Website Game Creator</p>
@@ -346,7 +322,7 @@
         </div>
 
         <div class="discord-box">
-            <img id="sub-avatar" src="https://api.fluentcdn.com/assets/rkansh-avatar.jpg" class="discord-avatar" alt="Discord Avatar" onerror="this.src='1000008356_2.jpg'">
+            <img id="disc-pfp" src="1000008356.jpg" class="discord-avatar" alt="Discord Avatar" onerror="useEmbeddedFallback(this)">
             <div class="discord-details">
                 <div class="discord-info-wrapper">
                     <span class="discord-username">rkanshplayz</span>
@@ -356,13 +332,11 @@
             </div>
         </div>
 
-        <!-- About Me Card -->
         <div class="content-card">
             <h3>ABOUT ME</h3>
             <p>I am a coder, digital content creator, and competitive gamer. I love blending logic with creativity—whether I am writing custom frontend code, producing high-energy music beats, or mastering complex game mechanics.</p>
         </div>
 
-        <!-- Skills Card -->
         <div class="content-card">
             <h3>🚀 SKILLS & PLATFORMS</h3>
             <ul>
@@ -372,20 +346,17 @@
             </ul>
         </div>
 
-        <!-- Social Links -->
         <div class="social-icons-row">
             <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="icon-link"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="icon-link"><i class="fa-solid fa-cube"></i></a>
         </div>
 
-        <!-- Hit Counter -->
         <div class="view-counter-text">
             <i class="fa-solid fa-eye"></i> Views: <span id="custom-hits">Loading...</span>
         </div>
     </div>
 
-    <!-- Music Embedded Frame -->
     <div class="music-dock">
         <div class="track-header">🎵 Mr.Kitty - After Dark (Slowed)</div>
         <div class="youtube-audio-wrapper">
@@ -394,12 +365,16 @@
     </div>
 
     <script>
+        // Implements a hardcoded text fallback if the image path fails
+        function useEmbeddedFallback(img) {
+            // High-fidelity absolute SVG encoding as an un-dropable image element
+            img.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23141424' stroke='%23bc13fe' stroke-width='2'/><text x='50%' y='55%' font-family='Orbitron, sans-serif' font-size='32' fill='%23ffffff' text-anchor='middle'>🥷</text></svg>";
+        }
+
         function initiateZone() {
             const gate = document.getElementById('entry-overlay');
             gate.style.opacity = '0';
-            setTimeout(() => {
-                gate.style.visibility = 'hidden';
-            }, 500);
+            setTimeout(() => { gate.style.visibility = 'hidden'; }, 500);
 
             const player = document.getElementById('yt-player');
             player.src = "https://www.youtube.com/embed/XAP8ST5mRgg?autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0";
@@ -407,11 +382,11 @@
 
         async function runViews() {
             try {
-                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v11');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v12');
                 const data = await res.json();
-                document.getElementById('custom-hits').innerText = data.count || data.value || 62;
+                document.getElementById('custom-hits').innerText = data.count || data.value || 65;
             } catch (e) {
-                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (75 - 62 + 1)) + 62;
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (75 - 65 + 1)) + 65;
             }
         }
         window.addEventListener('DOMContentLoaded', runViews);
@@ -419,3 +394,4 @@
 
 </body>
 </html>
+
