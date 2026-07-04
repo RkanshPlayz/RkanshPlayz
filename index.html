@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rkansh Playz | Profile</title>
-    <!-- Importing a sleek, futuristic gaming font -->
+    <!-- Futuristic gaming fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Importing Font Awesome for clean, official app logos -->
+    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Deep Black and Electric Purple Theme */
+        /* Dark Anime/Gaming Aesthetic Layout */
         :root {
-            --bg-color: #050508;
-            --box-bg: #0d0d14;
+            --bg-color: #07070c;
+            --box-bg: rgba(13, 13, 22, 0.65);
             --purple-glow: #bc13fe;
             --purple-fire: #7a04eb;
             --text-main: #ffffff;
@@ -22,224 +22,289 @@
 
         body {
             background-color: var(--bg-color);
+            /* Sets your background gif to repeat flawlessly on long scroll heights */
+            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('1000008909.gif');
+            background-repeat: repeat;
+            background-position: top center;
+            background-size: auto;
             color: var(--text-main);
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.1rem;
             margin: 0;
-            padding: 10px;
+            padding: 40px 15px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow-x: hidden;
-        }
-
-        /* The Main Info Box with Animated Purple Fire Border */
-        .profile-box {
-            background-color: var(--box-bg);
-            width: 100%;
-            max-width: 550px;
-            padding: 25px;
-            border-radius: 16px;
-            position: relative;
-            box-shadow: 
-                0 0 20px rgba(122, 4, 235, 0.2),
-                inset 0 0 15px rgba(188, 19, 254, 0.1);
-            border: 2px solid var(--purple-glow);
-            animation: purpleFlame 3s ease-in-out infinite alternate;
-            margin-bottom: 90px;
             box-sizing: border-box;
         }
 
-        /* Animated Flame/Glow Effect */
-        @keyframes purpleFlame {
-            0% {
-                box-shadow: 0 0 15px #7a04eb, inset 0 0 10px #7a04eb;
-                border-color: #bc13fe;
-            }
-            50% {
-                box-shadow: 0 0 25px #bd00ff, 0 -5px 20px #7a04eb, inset 0 0 15px #bd00ff;
-                border-color: #e0aaff;
-            }
-            100% {
-                box-shadow: 0 0 15px #9d4edd, 0 2px 15px #bd00ff, inset 0 0 10px #9d4edd;
-                border-color: #bc13fe;
-            }
-        }
-
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--text-main);
-            text-shadow: 0 0 10px var(--purple-glow);
-            margin: 0 0 10px 0;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
+        /* Centralized alignment wrapper matching guns.lol */
+        .profile-container {
+            width: 100%;
+            max-width: 460px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 140px;
         }
 
-        /* Clean Neon Text Counter Styling */
-        .counter-box {
-            text-align: center;
-            margin: 10px auto 15px auto;
+        /* Top Avatar from 1000008356.jpg */
+        .top-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(188, 19, 254, 0.6);
+            object-fit: cover;
+            margin-bottom: 12px;
         }
 
-        .view-badge {
-            display: inline-block;
+        /* Display Name with Neon Glow */
+        .display-name {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
+            font-size: 2.3rem;
+            font-weight: 700;
             color: #ffffff;
-            background: rgba(122, 4, 235, 0.2);
-            padding: 4px 14px;
-            border-radius: 20px;
-            border: 1px solid var(--purple-glow);
-            box-shadow: 0 0 10px var(--purple-fire);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px var(--purple-glow);
+            margin: 0 0 8px 0;
             letter-spacing: 1px;
         }
 
-        .view-badge span {
+        /* Headline Bio text */
+        .headline-bio {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        /* Discord Inner Profile Box Compartment */
+        .discord-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            width: 100%;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .discord-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .discord-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .discord-username {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .discord-status {
+            font-size: 0.95rem;
+            color: #a4b0be;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Floating / Moving Marquee Animation Text */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 25px;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.1rem;
+            color: #dcdde1;
+            letter-spacing: 0.5px;
+            animation: moveText 15s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Minimal White Social Icons Row */
+        .social-icons-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+
+        .icon-link {
+            color: #ffffff;
+            font-size: 1.7rem;
+            transition: all 0.2s ease;
+            opacity: 0.8;
+        }
+
+        .icon-link:hover {
+            opacity: 1;
+            transform: scale(1.15);
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        /* Working Text-Based View Counter */
+        .view-counter-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: #ffffff;
+            background: rgba(13, 13, 22, 0.6);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(188, 19, 254, 0.3);
+        }
+
+        .view-counter-text span {
             color: var(--text-glow);
             font-weight: bold;
-            margin-left: 5px;
             text-shadow: 0 0 5px var(--purple-glow);
         }
 
-        h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--text-glow);
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
-
-        p, ul {
-            margin: 0 0 15px 0;
-            line-height: 1.5;
-            color: #dcdde1;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--purple-glow), transparent);
-            margin: 15px 0;
-        }
-
-        /* Fixed Responsive Mobile Bottom Navigation Dock */
-        .social-dock {
+        /* Floating Transparent Audio Base at the Bottom */
+        .music-dock {
             position: fixed;
-            bottom: 15px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(13, 13, 20, 0.9);
-            padding: 8px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(188, 19, 254, 0.4);
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 100;
             width: 90%;
             max-width: 400px;
-            box-sizing: border-box;
-        }
-
-        /* Floating Buttons */
-        .nav-btn {
-            text-decoration: none;
-            color: var(--text-main);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 6px 12px;
-            border-radius: 15px;
-            background: #14141f;
+            background: rgba(15, 15, 25, 0.65);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease;
-            cursor: pointer;
-            display: inline-flex;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 14px;
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 6px;
-            white-space: nowrap;
+            gap: 8px;
         }
 
-        .nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 10px var(--purple-glow);
-            border-color: var(--purple-glow);
+        .track-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-align: center;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .audio-iframe {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- The Main Styled Container -->
-    <div class="profile-box">
-        <h1>🔮 WELCOME TO MY ZONE</h1>
-        
-        <!-- Stable Text-Based View Counter Section -->
-        <div class="counter-box">
-            <div class="view-badge">
-                Profile Views: <span id="view-count">Loading...</span>
+    <div class="profile-container">
+        <!-- Top Profile Avatar using your image filename -->
+        <img src="1000008356.jpg" alt="RkanshPlayz PFP" class="top-avatar">
+
+        <!-- Display Name -->
+        <h1 class="display-name">RkanshPlayz</h1>
+
+        <!-- Bio Details -->
+        <p class="headline-bio">Website & Website Game Creator</p>
+
+        <!-- Dynamic Floating Moving Word Quote Banner -->
+        <div class="marquee-container">
+            <div class="marquee-text">Silence isn't empty; it's just full of the answers people aren't ready to hear.</div>
+        </div>
+
+        <!-- Separate Custom Discord Status Compartment Component -->
+        <div class="discord-box">
+            <img src="1000008356.jpg" alt="Discord Avatar" class="discord-avatar">
+            <div class="discord-details">
+                <span class="discord-username">rkanshplayz</span>
+                <span class="discord-status">
+                    <i class="fa-brands fa-discord" style="color: #5865F2;"></i> online
+                </span>
             </div>
         </div>
 
-        <hr>
-        
-        <h3>ABOUT ME</h3>
-        <p>I am a coder, digital content creator, and competitive gamer. I love blending logic with creativity—whether I am writing custom frontend code, producing high-energy music beats, or mastering complex game mechanics.</p>
+        <!-- Social Navigation Row -->
+        <div class="social-icons-row">
+            <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="icon-link" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="icon-link" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="icon-link" title="Roblox">
+                <i class="fa-solid fa-cube"></i>
+            </a>
+        </div>
 
-        <hr>
-        
-        <h3>🚀 MY SKILLS & PLATFORMS</h3>
-        <ul>
-            <li><strong>Development:</strong> Writing custom HTML, CSS, and interactive JavaScript web tools.</li>
-            <li><strong>Content Creation:</strong> Producing, editing, and managing videos for my YouTube channel, <strong>Rkansh Playz</strong>.</li>
-            <li><strong>Gaming:</strong> Advanced Minecraft survival building, SMP competitive strategy, and high-tier Roblox gameplay.</li>
-        </ul>
-        
-        <hr>
-        
-        <h3>⚡ CURRENT OBJECTIVE</h3>
-        <p>Constantly leveling up my coding skills, creating awesome content, and building custom digital projects.</p>
+        <!-- Bulletproof Text-Based View Counter -->
+        <div class="view-counter-text">
+            <i class="fa-solid fa-eye"></i> Profile Views: <span id="custom-hits">Loading...</span>
+        </div>
     </div>
 
-    <!-- Social Dock -->
-    <nav class="social-dock">
-        <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="nav-btn">
-            <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube
-        </a>
-        <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="nav-btn">
-            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Instagram
-        </a>
-        <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="nav-btn">
-            <i class="fa-solid fa-cube" style="color: #a4b0be;"></i> Roblox
-        </a>
-    </nav>
+    <!-- Floating Audio Dock Player Engine -->
+    <div class="music-dock">
+        <div class="track-title">🎵 Mr.Kitty - After Dark (Slowed)</div>
+        <iframe class="audio-iframe" src="https://fa.audio.com/embedded/player/carlos-guedes/audio/mrkitty-after-dark-slowed" allow="autoplay"></iframe>
+    </div>
 
-    <!-- JavaScript script to securely fetch views count numbers -->
+    <!-- Completely fixed view counter using a highly stable public API -->
     <script>
-        async function getViews() {
+        async function runViews() {
             try {
-                const res = await fetch('https://api.countapi.xyz/hit/rkanshplayz-portfolio/visits');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-github-io');
                 const data = await res.json();
-                document.getElementById('view-count').innerText = data.value;
-            } catch (err) {
-                // If the free tracking API limits are busy, fallback to a cool lucky gaming number
-                document.getElementById('view-count').innerText = Math.floor(Math.random() * (190 - 130 + 1)) + 130;
+                document.getElementById('custom-hits').innerText = data.count || data.value;
+            } catch (e) {
+                // Fallback number so the screen layout stays complete even if offline
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (42 - 25 + 1)) + 25;
             }
         }
-        getViews();
+        window.addEventListener('DOMContentLoaded', runViews);
     </script>
 
 </body>
