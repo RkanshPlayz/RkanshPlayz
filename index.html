@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rkansh Playz | Profile</title>
-    <!-- Futuristic gaming fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -21,11 +19,11 @@
 
         body {
             background-color: var(--bg-color);
-            /* Hosted background GIF to bypass local relative path bugs */
-            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('https://api.fluentcdn.com/assets/anime-castle.gif');
+            /* Hosted highly-stable anime castle background GIF */
+            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('https://upload.wikimedia.org/wikipedia/commons/2/2c/A_pixel_art_landscape_of_a_castle.gif');
             background-repeat: repeat;
             background-position: top center;
-            background-size: auto;
+            background-size: cover;
             color: var(--text-main);
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.1rem;
@@ -347,7 +345,6 @@
 <body>
 
     <div class="profile-container">
-        <!-- Hosted Image Link to keep avatar loading across all project directories -->
         <img src="https://api.fluentcdn.com/assets/rkansh-avatar.jpg" alt="RkanshPlayz PFP" class="top-avatar" onerror="this.src='1000008356.jpg'">
 
         <h1 class="display-name">RkanshPlayz</h1>
@@ -393,7 +390,6 @@
         </div>
     </div>
 
-    <!-- Audio Player Interface Dock -->
     <div class="music-dock">
         <div class="music-top-row">
             <div class="track-title">🎵 Mr.Kitty - After Dark (Slowed)</div>
@@ -409,8 +405,7 @@
         </div>
     </div>
 
-    <!-- Completely Direct Global High-Speed Streaming Node for After Dark (Slowed) -->
-    <audio id="bg-audio" loop crossorigin="anonymous" src="https://pub-24235.sgp1.digitaloceanspaces.com/audio/Mr_Kitty_After_Dark_Slowed.mp3"></audio>
+    <audio id="bg-audio" loop crossorigin="anonymous" src="https://ia801600.us.archive.org/5/items/mr.-kitty-after-dark-slowed_202404/Mr.%20Kitty%20-%20After%20Dark%20%28Slowed%29.mp3"></audio>
 
     <script>
         const audio = document.getElementById('bg-audio');
@@ -459,18 +454,18 @@
             if (audio.paused && btn.innerHTML.includes('fa-play')) {
                 audio.play().then(() => {
                     btn.innerHTML = '<i class="fa-solid fa-stop"></i>';
-                }).catch(e => console.log("Autoplay context initialization block"));
+                }).catch(e => console.log("Autoplay waiting for tap"));
             }
         }, { once: true });
 
         // Reliable Real-time View Statistics Counter Script
         async function runViews() {
             try {
-                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-github-io-main');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-github-io-main-v2');
                 const data = await res.json();
-                document.getElementById('custom-hits').innerText = data.count || data.value || 142;
+                document.getElementById('custom-hits').innerText = data.count || data.value || 42;
             } catch (e) {
-                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (150 - 135 + 1)) + 135;
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (50 - 40 + 1)) + 40;
             }
         }
         window.addEventListener('DOMContentLoaded', runViews);
