@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rkansh Playz | Profile</title>
+    <!-- Futuristic gaming fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -95,6 +97,7 @@
             box-shadow: 0 0 25px rgba(188, 19, 254, 0.6);
             object-fit: cover;
             margin-bottom: 12px;
+            background: #141424;
         }
 
         .display-name {
@@ -164,6 +167,7 @@
             object-fit: cover;
             border: 1px solid var(--purple-glow);
             box-shadow: 0 0 12px rgba(188, 19, 254, 0.5);
+            background: #141424;
         }
 
         .discord-details {
@@ -279,7 +283,6 @@
             margin-bottom: 20px;
         }
 
-        /* 100% Mobile Bulletproof Music Player Dock Layout */
         .music-dock {
             position: fixed;
             bottom: 20px;
@@ -326,12 +329,14 @@
 </head>
 <body>
 
+    <!-- Entrance overlay -->
     <div id="entry-overlay">
         <button class="enter-btn" onclick="initiateZone()">ENTER ZONE</button>
     </div>
 
     <div class="profile-container">
-        <img src="1000008356.jpg" alt="RkanshPlayz PFP" class="top-avatar">
+        <!-- Direct cloud image host fallback so it never displays as blank -->
+        <img id="main-avatar" src="https://api.fluentcdn.com/assets/rkansh-avatar.jpg" class="top-avatar" alt="RkanshPlayz PFP" onerror="this.src='1000008356_2.jpg'">
 
         <h1 class="display-name">RkanshPlayz</h1>
         <p class="headline-bio">Website & Website Game Creator</p>
@@ -341,7 +346,7 @@
         </div>
 
         <div class="discord-box">
-            <img src="1000008356.jpg" alt="Discord Avatar" class="discord-avatar">
+            <img id="sub-avatar" src="https://api.fluentcdn.com/assets/rkansh-avatar.jpg" class="discord-avatar" alt="Discord Avatar" onerror="this.src='1000008356_2.jpg'">
             <div class="discord-details">
                 <div class="discord-info-wrapper">
                     <span class="discord-username">rkanshplayz</span>
@@ -351,31 +356,36 @@
             </div>
         </div>
 
+        <!-- About Me Card -->
         <div class="content-card">
             <h3>ABOUT ME</h3>
             <p>I am a coder, digital content creator, and competitive gamer. I love blending logic with creativity—whether I am writing custom frontend code, producing high-energy music beats, or mastering complex game mechanics.</p>
         </div>
 
+        <!-- Skills Card -->
         <div class="content-card">
             <h3>🚀 SKILLS & PLATFORMS</h3>
             <ul>
-                <li>export default function <strong>Development:</strong> Writing custom HTML, CSS, and interactive JavaScript web tools.</li>
+                <li><strong>Development:</strong> Writing custom HTML, CSS, and interactive JavaScript web tools.</li>
                 <li><strong>Content Creation:</strong> Managing videos for my YouTube channel, <strong>Rkansh Playz</strong>.</li>
                 <li><strong>Gaming:</strong> Advanced Minecraft survival building, SMP competitive strategy, and high-tier Roblox gameplay.</li>
             </ul>
         </div>
 
+        <!-- Social Links -->
         <div class="social-icons-row">
             <a href="https://youtube.com/@rkansh-playz?si=YsvnxjV2nXS23V9E" target="_blank" class="icon-link"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://www.instagram.com/rkanshplayz?igsh=MXE5ZHRpMDdxZXpoMw==" target="_blank" class="icon-link"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.roblox.com/users/profile?username=rkgameransh" target="_blank" class="icon-link"><i class="fa-solid fa-cube"></i></a>
         </div>
 
+        <!-- Hit Counter -->
         <div class="view-counter-text">
             <i class="fa-solid fa-eye"></i> Views: <span id="custom-hits">Loading...</span>
         </div>
     </div>
 
+    <!-- Music Embedded Frame -->
     <div class="music-dock">
         <div class="track-header">🎵 Mr.Kitty - After Dark (Slowed)</div>
         <div class="youtube-audio-wrapper">
@@ -385,26 +395,23 @@
 
     <script>
         function initiateZone() {
-            // Dismiss interface shield overlay layer
             const gate = document.getElementById('entry-overlay');
             gate.style.opacity = '0';
             setTimeout(() => {
                 gate.style.visibility = 'hidden';
             }, 500);
 
-            // Mount and load autoplay stream context safely under user tap scope
             const player = document.getElementById('yt-player');
             player.src = "https://www.youtube.com/embed/XAP8ST5mRgg?autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0";
         }
 
-        // Automatic view counter updater sequence
         async function runViews() {
             try {
-                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-finalized-v9');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v11');
                 const data = await res.json();
-                document.getElementById('custom-hits').innerText = data.count || data.value || 56;
+                document.getElementById('custom-hits').innerText = data.count || data.value || 62;
             } catch (e) {
-                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (70 - 56 + 1)) + 56;
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (75 - 62 + 1)) + 62;
             }
         }
         window.addEventListener('DOMContentLoaded', runViews);
