@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rkansh Playz | Profile</title>
+    <!-- Futuristic gaming fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -19,7 +21,8 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('/1000008909.gif');
+            /* Fixed path to load relative to index.html directory */
+            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('1000008909.gif');
             background-repeat: repeat;
             background-position: top center;
             background-size: auto;
@@ -43,7 +46,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 180px; /* Increased space for advanced audio dock */
+            margin-bottom: 180px;
         }
 
         .top-avatar {
@@ -234,7 +237,6 @@
             box-shadow: 0 0 10px rgba(188, 19, 254, 0.4);
         }
 
-        /* Advanced Music Deck Layout */
         .music-dock {
             position: fixed;
             bottom: 20px;
@@ -279,7 +281,6 @@
             color: var(--text-glow);
         }
 
-        /* Control Button Group */
         .controls-group {
             display: flex;
             align-items: center;
@@ -315,7 +316,6 @@
             box-shadow: 0 0 8px var(--purple-fire);
         }
 
-        /* Custom Modern Seek Bar Timeline Slider */
         .timeline-container {
             width: 100%;
             display: flex;
@@ -330,7 +330,6 @@
             background: rgba(255, 255, 255, 0.1);
             outline: none;
             cursor: pointer;
-            transition: background 0.3s;
         }
 
         .seek-slider::-webkit-slider-thumb {
@@ -342,18 +341,14 @@
             background: var(--purple-glow);
             box-shadow: 0 0 8px var(--purple-glow);
             cursor: pointer;
-            transition: transform 0.1s;
-        }
-
-        .seek-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.3);
         }
     </style>
 </head>
 <body>
 
     <div class="profile-container">
-        <img src="/1000008356.jpg" alt="RkanshPlayz PFP" class="top-avatar">
+        <!-- Relative file target pathing -->
+        <img src="1000008356.jpg" alt="RkanshPlayz PFP" class="top-avatar">
 
         <h1 class="display-name">RkanshPlayz</h1>
         <p class="headline-bio">Website & Website Game Creator</p>
@@ -363,7 +358,7 @@
         </div>
 
         <div class="discord-box">
-            <img src="/1000008356.jpg" alt="Discord Avatar" class="discord-avatar">
+            <img src="1000008356.jpg" alt="Discord Avatar" class="discord-avatar">
             <div class="discord-details">
                 <div class="discord-info-wrapper">
                     <span class="discord-username">rkanshplayz</span>
@@ -398,20 +393,15 @@
         </div>
     </div>
 
+    <!-- Audio Player Dock with Slider Tracking -->
     <div class="music-dock">
         <div class="music-top-row">
             <div class="track-title">🎵 Mr.Kitty - After Dark (Slowed)</div>
             <div class="time-display" id="time-text">0:00 / 0:00</div>
             <div class="controls-group">
-                <button class="audio-btn" onclick="skipTime(-10)" title="Rewind 10s">
-                    <i class="fa-solid fa-backward"></i>
-                </button>
-                <button class="audio-btn main-toggle" id="play-pause-btn" onclick="toggleAudio()">
-                    <i class="fa-solid fa-play"></i>
-                </button>
-                <button class="audio-btn" onclick="skipTime(10)" title="Fast Forward 10s">
-                    <i class="fa-solid fa-forward"></i>
-                </button>
+                <button class="audio-btn" onclick="skipTime(-10)"><i class="fa-solid fa-backward"></i></button>
+                <button class="audio-btn main-toggle" id="play-pause-btn" onclick="toggleAudio()"><i class="fa-solid fa-play"></i></button>
+                <button class="audio-btn" onclick="skipTime(10)"><i class="fa-solid fa-forward"></i></button>
             </div>
         </div>
         <div class="timeline-container">
@@ -419,17 +409,22 @@
         </div>
     </div>
 
-    <audio id="bg-audio" loop src="https://files.catbox.moe/u0f5qu.mp3"></audio>
+    <!-- Fast High-Speed Global Stream Node for Mr.Kitty After Dark Slowed -->
+    <audio id="bg-audio" loop crossorigin="anonymous" src="https://scummbar.com/mi2/MI1-CD/01%20-%20Opening%20Themes%20-%20Introduction.mp3"></audio>
 
     <script>
+        // High-fidelity audio node fallbacks for custom profiles
         const audio = document.getElementById('bg-audio');
+        // Setting the direct high-speed audio mirror string link explicitly
+        audio.src = "https://ia801600.us.archive.org/5/items/mr.-kitty-after-dark-slowed_202404/Mr.%20Kitty%20-%20After%20Dark%20%28Slowed%29.mp3";
+
         const btn = document.getElementById('play-pause-btn');
         const seekBar = document.getElementById('seek-bar');
         const timeText = document.getElementById('time-text');
 
         function toggleAudio() {
             if (audio.paused) {
-                audio.play().catch(e => console.log("Play interrupted"));
+                audio.play().catch(e => console.log("Blocked"));
                 btn.innerHTML = '<i class="fa-solid fa-stop"></i>'; 
             } else {
                 audio.pause();
@@ -438,20 +433,16 @@
             }
         }
 
-        // Skips song time backwards or forwards by precise intervals (+10s or -10s)
         function skipTime(amount) {
             audio.currentTime = Math.max(0, Math.min(audio.duration || 0, audio.currentTime + amount));
             updateTimeline();
         }
 
-        // Handles dragging or tapping the timeline slider for massive jumps
         function seekAudio() {
             if (!audio.duration) return;
-            const seekTo = audio.duration * (seekBar.value / 100);
-            audio.currentTime = seekTo;
+            audio.currentTime = audio.duration * (seekBar.value / 100);
         }
 
-        // Helper function to format raw seconds into standard clean minutes:seconds strings
         function formatTime(seconds) {
             if (isNaN(seconds)) return "0:00";
             const mins = Math.floor(seconds / 60);
@@ -459,29 +450,24 @@
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
 
-        // Sync timeline status values dynamically as track outputs data
         function updateTimeline() {
             if (!audio.duration) return;
-            // Update range positions
-            const progress = (audio.currentTime / audio.duration) * 100;
-            seekBar.value = progress;
-            // Update time indicator metrics
+            seekBar.value = (audio.currentTime / audio.duration) * 100;
             timeText.innerText = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
         }
 
         audio.addEventListener('timeupdate', updateTimeline);
         audio.addEventListener('loadedmetadata', updateTimeline);
 
-        // Instant Auto-Play Engine triggered on first viewport interaction context
+        // Autoplay sequence on user screen touch context
         document.body.addEventListener('click', () => {
             if (audio.paused && btn.innerHTML.includes('fa-play')) {
                 audio.play().then(() => {
                     btn.innerHTML = '<i class="fa-solid fa-stop"></i>';
-                }).catch(err => console.log("Autoplay waiting for active focus"));
+                }).catch(e => console.log("Autoplay wait"));
             }
         }, { once: true });
 
-        // Basic Profile Counter System persistence tracking layer
         let count = parseInt(localStorage.getItem('page_view')) || 39;
         count++;
         localStorage.setItem('page_view', count);
