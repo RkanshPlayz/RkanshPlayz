@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rkansh Playz | Profile</title>
+    <!-- Futuristic gaming fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -25,7 +27,7 @@
             width: 100%;
             height: 100%;
             background-color: #050508;
-            background-image: linear-gradient(rgba(5, 5, 8, 0.8), rgba(5, 5, 8, 0.95)), url('1000008909.gif');
+            background-image: linear-gradient(rgba(5, 5, 8, 0.8), rgba(5, 5, 8, 0.95)), url('https://cdn.discordapp.com/attachments/1519398905815502939/1523011725002014820/e0c6b50a427fc13e0ab8d73431a1a4c4.gif?ex=6a4a8eb3&is=6a493d33&hm=8e7bfb10fbd3b39355ed084341b971bf6adb514b405728ff405d9d2e4473a385&');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -60,7 +62,8 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('1000008909.gif');
+            /* Mapped to direct external URL target for 1000008909.gif */
+            background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('https://cdn.discordapp.com/attachments/1519398905815502939/1523011725002014820/e0c6b50a427fc13e0ab8d73431a1a4c4.gif?ex=6a4a8eb3&is=6a493d33&hm=8e7bfb10fbd3b39355ed084341b971bf6adb514b405728ff405d9d2e4473a385&');
             background-repeat: repeat;
             background-position: top center;
             background-size: auto;
@@ -77,6 +80,39 @@
             box-sizing: border-box;
         }
 
+        /* Top Corner Action Controls */
+        .top-action-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 500;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .action-btn:hover {
+            border-color: var(--purple-glow);
+            box-shadow: 0 0 10px var(--purple-glow);
+            transform: translateY(-2px);
+        }
+
         .profile-container {
             width: 100%;
             max-width: 480px;
@@ -84,6 +120,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 60px;
             margin-bottom: 120px;
         }
 
@@ -326,11 +363,23 @@
 </head>
 <body>
 
+    <!-- Entrance Overlay Shield -->
     <div id="entry-overlay">
         <button class="enter-btn" onclick="initiateZone()">ENTER ZONE</button>
     </div>
 
+    <!-- Corner Controls -->
+    <div class="top-action-bar">
+        <button class="action-btn" onclick="location.reload()" title="Refresh Page">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <button class="action-btn" id="share-button" onclick="copySiteLink()" title="Copy Link">
+            <i class="fa-solid fa-share-nodes"></i>
+        </button>
+    </div>
+
     <div class="profile-container">
+        <!-- Direct Discord CDN image link configuration -->
         <img src="https://cdn.discordapp.com/attachments/1519398905815502939/1523009499118571812/03cb7992ef8badf6bcaf2b6211726dd6.jpg?ex=6a4a8ca0&is=6a493b20&hm=ab685e552262d65157615dc0f4011e147949ed8247d62a0b55cc16368d0a5961&" class="top-avatar" alt="RkanshPlayz PFP">
 
         <h1 class="display-name">RkanshPlayz</h1>
@@ -376,6 +425,7 @@
         </div>
     </div>
 
+    <!-- Bottom Audio Station -->
     <div class="music-dock">
         <div class="track-header">🎵 Mr.Kitty - After Dark (Slowed)</div>
         <div class="youtube-audio-wrapper">
@@ -389,18 +439,31 @@
             gate.style.opacity = '0';
             setTimeout(() => { gate.style.visibility = 'hidden'; }, 500);
 
-            // Mount and un-mute the tracking stream asset inside active interaction logic scope
             const player = document.getElementById('yt-player');
             player.src = "https://www.youtube.com/embed/XAP8ST5mRgg?autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0";
         }
 
+        // Clip-board copy function engine for share button logic
+        function copySiteLink() {
+            const shareBtn = document.getElementById('share-button');
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                // Success visual notification state shift
+                shareBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #00ff88;"></i>';
+                shareBtn.style.borderColor = '#00ff88';
+                setTimeout(() => {
+                    shareBtn.innerHTML = '<i class="fa-solid fa-share-nodes"></i>';
+                    shareBtn.style.borderColor = '';
+                }, 2000);
+            }).catch(err => console.error("Could not copy link: ", err));
+        }
+
         async function runViews() {
             try {
-                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v15');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v20');
                 const data = await res.json();
-                document.getElementById('custom-hits').innerText = data.count || data.value || 72;
+                document.getElementById('custom-hits').innerText = data.count || data.value || 75;
             } catch (e) {
-                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (85 - 72 + 1)) + 72;
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (90 - 75 + 1)) + 75;
             }
         }
         window.addEventListener('DOMContentLoaded', runViews);
@@ -408,3 +471,4 @@
 
 </body>
 </html>
+
