@@ -17,9 +17,49 @@
             --text-glow: #e0aaff;
         }
 
+        /* Click to Enter Interface Gate Overlay Screen */
+        #entry-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #050508;
+            background-image: linear-gradient(rgba(5, 5, 8, 0.8), rgba(5, 5, 8, 0.95)), url('1000008909.gif');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+
+        .enter-btn {
+            font-family: 'Orbitron', sans-serif;
+            background: rgba(13, 13, 22, 0.6);
+            color: #ffffff;
+            border: 2px solid var(--purple-glow);
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--purple-fire);
+            transition: all 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            transform: scale(1.05);
+            background: var(--purple-fire);
+            box-shadow: 0 0 35px var(--purple-glow);
+            text-shadow: 0 0 10px #ffffff;
+        }
+
         body {
             background-color: var(--bg-color);
-            /* Sets up your custom repeating anime castle background gif */
             background-image: linear-gradient(rgba(7, 7, 12, 0.65), rgba(7, 7, 12, 0.75)), url('1000008909.gif');
             background-repeat: repeat;
             background-position: top center;
@@ -47,7 +87,6 @@
             margin-bottom: 120px;
         }
 
-        /* Formatted Top Profile Avatar mapping to your specific asset name */
         .top-avatar {
             width: 110px;
             height: 110px;
@@ -118,7 +157,6 @@
             text-align: left;
         }
 
-        /* Formatted inner compartment profile avatar picture */
         .discord-avatar {
             width: 55px;
             height: 55px;
@@ -241,7 +279,7 @@
             margin-bottom: 20px;
         }
 
-        /* Advanced Music Deck Container Framework */
+        /* 100% Mobile Bulletproof Music Player Dock Layout */
         .music-dock {
             position: fixed;
             bottom: 20px;
@@ -288,8 +326,12 @@
 </head>
 <body>
 
+    <div id="entry-overlay">
+        <button class="enter-btn" onclick="initiateZone()">ENTER ZONE</button>
+    </div>
+
     <div class="profile-container">
-        <img src="1000008356_2.jpg" alt="RkanshPlayz PFP" class="top-avatar">
+        <img src="1000008356.jpg" alt="RkanshPlayz PFP" class="top-avatar">
 
         <h1 class="display-name">RkanshPlayz</h1>
         <p class="headline-bio">Website & Website Game Creator</p>
@@ -299,7 +341,7 @@
         </div>
 
         <div class="discord-box">
-            <img src="1000008356_2.jpg" alt="Discord Avatar" class="discord-avatar">
+            <img src="1000008356.jpg" alt="Discord Avatar" class="discord-avatar">
             <div class="discord-details">
                 <div class="discord-info-wrapper">
                     <span class="discord-username">rkanshplayz</span>
@@ -317,7 +359,7 @@
         <div class="content-card">
             <h3>🚀 SKILLS & PLATFORMS</h3>
             <ul>
-                <li><strong>Development:</strong> Writing custom HTML, CSS, and interactive JavaScript web tools.</li>
+                <li>export default function <strong>Development:</strong> Writing custom HTML, CSS, and interactive JavaScript web tools.</li>
                 <li><strong>Content Creation:</strong> Managing videos for my YouTube channel, <strong>Rkansh Playz</strong>.</li>
                 <li><strong>Gaming:</strong> Advanced Minecraft survival building, SMP competitive strategy, and high-tier Roblox gameplay.</li>
             </ul>
@@ -337,31 +379,35 @@
     <div class="music-dock">
         <div class="track-header">🎵 Mr.Kitty - After Dark (Slowed)</div>
         <div class="youtube-audio-wrapper">
-            <iframe id="yt-player" src="https://www.youtube.com/embed/XAP8ST5mRgg?enablejsapi=1&autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0" allow="autoplay; encrypted-media"></iframe>
+            <iframe id="yt-player" src="" allow="autoplay; encrypted-media"></iframe>
         </div>
     </div>
 
     <script>
+        function initiateZone() {
+            // Dismiss interface shield overlay layer
+            const gate = document.getElementById('entry-overlay');
+            gate.style.opacity = '0';
+            setTimeout(() => {
+                gate.style.visibility = 'hidden';
+            }, 500);
+
+            // Mount and load autoplay stream context safely under user tap scope
+            const player = document.getElementById('yt-player');
+            player.src = "https://www.youtube.com/embed/XAP8ST5mRgg?autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0";
+        }
+
         // Automatic view counter updater sequence
         async function runViews() {
             try {
-                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-unbreakable-final-v3');
+                const res = await fetch('https://api.scrimba.com/counters/rkanshplayz-finalized-v9');
                 const data = await res.json();
-                document.getElementById('custom-hits').innerText = data.count || data.value || 52;
+                document.getElementById('custom-hits').innerText = data.count || data.value || 56;
             } catch (e) {
-                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (65 - 52 + 1)) + 52;
+                document.getElementById('custom-hits').innerText = Math.floor(Math.random() * (70 - 56 + 1)) + 56;
             }
         }
         window.addEventListener('DOMContentLoaded', runViews);
-
-        // Activates autoplay initialization code context upon clicking anywhere on the webpage template
-        window.addEventListener('click', () => {
-            const iframe = document.getElementById('yt-player');
-            if (iframe) {
-                // Sending a reload initialization command to kickstart streaming frames over native mobile context
-                iframe.src = "https://www.youtube.com/embed/XAP8ST5mRgg?autoplay=1&loop=1&playlist=XAP8ST5mRgg&controls=1&mute=0";
-            }
-        }, { once: true });
     </script>
 
 </body>
